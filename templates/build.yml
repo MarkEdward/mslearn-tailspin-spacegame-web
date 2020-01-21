@@ -2,7 +2,7 @@ parameters:
   buildConfiguration: 'Release'
 
 steps:
-- script: 'echo "$(Build.DefinitionName), ${{ parameters.buildConfiguration }}, $(Build.SourceBranch), $(Build.SourceBranchName),  $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
+- script: 'echo "Hi Jon! $(Build.DefinitionName), ${{ parameters.buildConfiguration }}, $(Build.SourceBranch), $(Build.SourceBranchName),  $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
   displayName: 'Write build info from template'
   workingDirectory: $(wwwrootDir)
 
