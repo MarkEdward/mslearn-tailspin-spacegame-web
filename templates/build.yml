@@ -2,6 +2,10 @@ parameters:
   buildConfiguration: 'Release'
 
 steps:
+- script: 'echo "$(Build.DefinitionName), ${{ parameters.buildConfiguration }}, $(Build.SourceBranch), $(Build.SourceBranchName),  $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
+  displayName: 'Write build info from template'
+  workingDirectory: $(wwwrootDir)
+
 - task: DotNetCoreCLI@2
   displayName: 'Build the project - ${{ parameters.buildConfiguration }}'
   inputs:
